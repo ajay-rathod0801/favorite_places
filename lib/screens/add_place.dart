@@ -1,3 +1,4 @@
+import 'package:favorite_places/widgets/image_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -23,7 +24,7 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
       showDialog(
         context: context,
         builder: (ctx) {
-          return  AlertDialog(
+          return AlertDialog(
             title: Text('Error'),
             content: Text('Please enter a title'),
             actions: [
@@ -32,9 +33,9 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
                   Navigator.of(ctx).pop();
                 },
                 child: const Text('Okay'),
-                style:  TextButton.styleFrom(
+                style: TextButton.styleFrom(
                   foregroundColor: Theme.of(context).colorScheme.onPrimary,
-              ),
+                ),
               ),
             ],
           );
@@ -72,6 +73,9 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
                 color: Theme.of(context).colorScheme.onBackground,
               ),
             ),
+            const Gap(12),
+            // Image Input
+            ImageInput(),
             const Gap(16),
             ElevatedButton.icon(
               onPressed: _savePlace,
