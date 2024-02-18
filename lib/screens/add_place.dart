@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:favorite_places/widgets/image_input.dart';
+import 'package:favorite_places/widgets/location_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -85,6 +86,8 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
                 _selectedImage = image;
               },
             ),
+            const Gap(10),
+            const LocationInput(),
             const Gap(16),
             ElevatedButton.icon(
               onPressed: _savePlace,
@@ -97,3 +100,4 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
     );
   }
 }
+
